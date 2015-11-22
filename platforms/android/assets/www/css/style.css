@@ -1,2 +1,20 @@
 /* Empty. Add your own CSS if you like */
 .complete { color: grey; text-decoration: line-through; }
+
+.pane{
+	background-color: #9999ff;
+}
+
+.popup-head {
+  background-color : #b3b3ff;
+}
+
+.popup-body {
+  background-color : #e5e5ff;
+}
+
+.popup-title {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  color: #0000cc;
+}

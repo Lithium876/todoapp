@@ -24,7 +24,7 @@
   <body ng-app="starter" ng-controller="TodoCtrl" class="platform-android platform-cordova platform-webview">
 
     <ion-pane>
-      <ion-header-bar class="bar-royal">
+      <ion-header-bar class="bar-positive">
         <button class="button button-icon" ng-click="newTask()">
         <i class="ion-compose icon"></i>
         </button>
@@ -32,17 +32,12 @@
       </ion-header-bar>
       <ion-content>
       <ion-list> <!--Left out this -->
-      <ion-item ng-repeat="task in tasks" 
-                 class="item-icon-right" 
-                 ng-class="{complete: task.completed}" 
-                 ng-click="task.completed = !task.completed">
+      <ion-item ng-repeat="task in tasks" class="item-icon-right" ng-class="{complete: task.completed}" ng-click="task.completed = !task.completed">
         <i class="icon ion-ios-arrow-left"></i>
-          <ion-option-button class="button-assertive" 
-                  ng-click="tasks.splice($index, 1)">
+          <ion-option-button class="button-assertive" ng-click="tasks.splice($index, 1)">
             Delete
           </ion-option-button>
-        <ion-option-button class="button-energized" 
-                  ng-click="edit(task)">
+        <ion-option-button class="button-energized" ng-click="edit(task)">
           Edit
         </ion-option-button>
        {{task.title}}   
