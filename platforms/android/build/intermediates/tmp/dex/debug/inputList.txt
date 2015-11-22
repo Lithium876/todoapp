@@ -1,0 +1,2 @@
+/home/lithium/Desktop/todoapp/platforms/android/build/intermediates/classes/debug
+/home/lithium/Desktop/todoapp/platforms/android/build/intermediates/pre-dexed/debug/classes-9a83181de83516b88df832e71fc56d8ef7a0896a.jar
