@@ -5,12 +5,10 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('starter', ['ionic'])
 
-.controller('TodoCtrl', function($scope,$ionicPopup,$ionicListDelegate) {
+.controller("TodoCtrl", function($scope,$ionicPopup,$ionicListDelegate) {
     $scope.tasks =
       [
-        {title: "First", completed: true},
-        {title: "Second", completed: false},
-        {title: "Third", completed: false},
+        
       ];
     $scope.newTask = function() {
       $ionicPopup.prompt({
@@ -33,7 +31,6 @@ angular.module('starter', ['ionic'])
 
       })
     };
-
 })
 
 .run(function($ionicPlatform) {
