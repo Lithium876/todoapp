@@ -31,7 +31,7 @@
         <h1 class="title">To Do</h1>
       </ion-header-bar>
       <ion-content>
-      <ion-list>
+      <ion-list> <!--Left out this -->
       <ion-item ng-repeat="task in tasks" 
                  class="item-icon-right" 
                  ng-class="{complete: task.completed}" 
@@ -45,9 +45,9 @@
                   ng-click="edit(task)">
           Edit
         </ion-option-button>
-         {{task.title}}   
+       {{task.title}}   
       </ion-item>
-      </ion-list>
+      </ion-list> <!--Left out this -->
       </ion-content>
     </ion-pane>
   </body>

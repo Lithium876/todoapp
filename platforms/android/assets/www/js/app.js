@@ -13,8 +13,8 @@ angular.module('starter', ['ionic'])
     $scope.newTask = function() {
       $ionicPopup.prompt({
         title: "New Task",
-        template: "Enter task:",
-        inputPlaceholder: "What do you need to do?",
+        template: "Enter Task:",
+        inputPlaceholder: "Add Task",
         okText: 'Create task'
       }).then(function(res) {    // promise 
         if (res) $scope.tasks.push({title: res, completed: false});
