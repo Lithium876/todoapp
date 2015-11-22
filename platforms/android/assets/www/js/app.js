@@ -7,9 +7,7 @@ angular.module('starter', ['ionic'])
 
 .controller("TodoCtrl", function($scope,$ionicPopup,$ionicListDelegate) {
     $scope.tasks =
-      [
-        
-      ];
+      [];
     $scope.newTask = function() {
       $ionicPopup.prompt({
         title: "New Task",
