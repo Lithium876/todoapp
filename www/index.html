@@ -37,7 +37,7 @@
       <ion-list> <!--Left out this -->
       <ion-item ng-repeat="task in tasks" class="item-icon-right" ng-class="{complete: task.completed}" ng-click="task.completed = !task.completed">
         <i class="icon ion-ios-arrow-left"></i>
-          <ion-option-button class="button-assertive" ng-click="data.splice($index, 1)">
+          <ion-option-button class="button-assertive" ng-click="tasks.splice($index, 1)">
             Delete
           </ion-option-button>
         <ion-option-button class="button-energized" ng-click="edit(task)">
