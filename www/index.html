@@ -34,7 +34,7 @@
       <div id="content" ng-show="tasks.length === 0">
               No Task Added
             </div>
-      <ion-list> <!--Left out this -->
+      <ion-list> <!-- issue 1 Left out this -->
       <ion-item ng-repeat="task in tasks" class="item-icon-right" ng-class="{complete: task.completed}" ng-click="task.completed = !task.completed">
         <i class="icon ion-ios-arrow-left"></i>
           <ion-option-button class="button-assertive" ng-click="tasks.splice($index, 1)">
