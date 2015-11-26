@@ -8,10 +8,13 @@ angular.module('starter', ['ionic'])
 .controller("TodoCtrl", function($scope,$ionicPopup,$ionicListDelegate,$ionicModal) {
   $scope.tasks = [];
   $scope.newTask = function(data){
-    $scope.tasks.push({title:data.newItem,complete: false});
-     data.newItem = ' ';
-           $scope.closeModal();
-    };
+    if (data.newItem!=" ")
+    {
+      $scope.tasks.push({title:data.newItem,complete: false});
+      data.newItem = ' ';
+      $scope.closeModal();
+    }
+  };
     $scope.edit = function(task) {
       $scope.data = { response: task.title };
       $ionicPopup.prompt({
