@@ -11,8 +11,14 @@ angular.module('starter', ['ionic'])
     if (data.newItem!=" ")
     {
       $scope.tasks.push({title:data.newItem,complete: false});
-      data.newItem = ' ';
+      swal("Task Added:", ""+ data.newItem, "success")
+      data.newItem = ' '; 
       $scope.closeModal();
+     
+    }else
+    {
+      $scope.closeModal();
+      swal("Incomplete", "No task was added", "error")
     }
   };
     $scope.edit = function(task) {
