@@ -25,7 +25,7 @@
 
     <ion-pane>
       <ion-header-bar class="bar-positive">
-        <button class="button button-icon" ng-click="newTask()">
+        <button class="button button-icon" ng-click="openModal()">
         <i class="ion-compose icon"></i>
         </button>
         <h1 class="title">To Do</h1>
@@ -34,7 +34,7 @@
       <div id="content" ng-show="tasks.length === 0">
               No Task Added
             </div>
-      <ion-list> <!--Left out this -->
+      <ion-list> <!-- issue 1 Left out this -->
       <ion-item ng-repeat="task in tasks" class="item-icon-right" ng-class="{complete: task.completed}" ng-click="task.completed = !task.completed">
         <i class="icon ion-ios-arrow-left"></i>
           <ion-option-button class="button-assertive" ng-click="tasks.splice($index, 1)">
@@ -49,4 +49,22 @@
       </ion-content>
     </ion-pane>
   </body>
+  <script id="addtasks.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar class="bar bar-header bar-positive" >
+    <button class="button" ng-click="closeModal()">back</button>
+      <h1 class="title">Add Task</h1>
+    </ion-header-bar>
+    <ion-content>
+      <form ng-submit="newTask(data)">
+        <label class="item item-input">
+          <input type="text" placeholder="Enter Task" ng-model="data.newItem">
+        </label>
+        <button class="button button-block button-positive" type="submit">
+          Add Task
+        </button>
+      </form>
+    </ion-content>
+  </ion-modal-view>
+</script>
 </html>

@@ -5,30 +5,47 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('starter', ['ionic'])
 
-.controller("TodoCtrl", function($scope,$ionicPopup,$ionicListDelegate) {
-    $scope.tasks =
-      [];
-    $scope.newTask = function() {
-      $ionicPopup.prompt({
-        title: "New Task",
-        template: "Enter Task:",
-        inputPlaceholder: "Add Task",
-        okText: 'Create task'
-      }).then(function(res) {    // promise 
-        if (res) $scope.tasks.push({title: res, completed: false});
-      })
+.controller("TodoCtrl", function($scope,$ionicPopup,$ionicListDelegate,$ionicModal) {
+  $scope.tasks = [];
+  $scope.newTask = function(data){
+    $scope.tasks.push({title:data.newItem,complete: false});
+     data.newItem = ' ';
+           $scope.closeModal();
     };
-     $scope.edit = function(task) {
+    $scope.edit = function(task) {
       $scope.data = { response: task.title };
       $ionicPopup.prompt({
         title: "Edit Task",
         scope: $scope
-      }).then(function(res) {    // promise 
+    }).then(function(res) {    // promise 
         if (res !== undefined) task.title = $scope.data.response;
         $ionicListDelegate.closeOptionButtons()
-
       })
     };
+    $ionicModal.fromTemplateUrl('addtasks.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+  $scope.openModal = function() {
+    $scope.modal.show();
+  };
+  $scope.closeModal = function() {
+    $scope.modal.hide();
+  };
+  //Cleanup the modal when we're done with it!
+  $scope.$on('$destroy', function() {
+    $scope.modal.remove();
+  });
+  // Execute action on hide modal
+  $scope.$on('modal.hidden', function() {
+    // Execute action
+  });
+  // Execute action on remove modal
+  $scope.$on('modal.removed', function() {
+    // Execute action
+  });
 })
 
 .run(function($ionicPlatform) {
@@ -43,3 +60,4 @@ angular.module('starter', ['ionic'])
     }
   });
 })
+
